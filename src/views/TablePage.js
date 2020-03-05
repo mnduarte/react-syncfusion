@@ -16,30 +16,31 @@ const TablePage = () => {
     console.log(args)
     if (grid && (args.requestType === 'beginEdit' || args.requestType === 'add')) {
       console.log(grid)
-      const cols = grid.current.columns;
-      for (const col of cols) {
-        if (col.field === "CustomerID") {
-          col.visible = true;
-        }
-        else if (col.field === "ShipCountry") {
-          col.visible = false;
-        }
-      }
+      // const cols = grid.current.columns;
+      // for (const col of cols) {
+      //   console.log(col);
+      //   if (col.field === "CustomerID") {
+      //     col.visible = true;
+      //   }
+      //   else if (col.field === "ShipCountry") {
+      //     col.visible = false;
+      //   }
+      // }
     }
   }
   const actionComplete = (args) => {
     console.log(args)
     if (grid && args.requestType === 'save') {
       console.log(grid)
-      const cols = grid.current.columns;
-      for (const col of cols) {
-        if (col.field === "CustomerID") {
-          col.visible = false;
-        }
-        else if (col.field === "ShipCountry") {
-          col.visible = true;
-        }
-      }
+      // const cols = grid.current.columns;
+      // for (const col of cols) {
+      //   if (col.field === "CustomerID") {
+      //     col.visible = false;
+      //   }
+      //   else if (col.field === "ShipCountry") {
+      //     col.visible = true;
+      //   }
+      // }
     }
   }
 
@@ -55,7 +56,7 @@ const TablePage = () => {
           <ColumnsDirective>
               <ColumnDirective field='EmployeeID' width='100' isPrimaryKey={true}/>
               <ColumnDirective field='OrderID' width='100' />
-              <ColumnDirective field='CustomerID' width='100'/>
+              <ColumnDirective field='CustomerID' width='100' />
               <ColumnDirective field='Freight' width='100' format="C2"/>
               <ColumnDirective field='ShipCountry' width='100'/>
           </ColumnsDirective>
